@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Owais Qadir | Data Analyst</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    h1 { font-size: 2.5rem; }
+    p { color: #94a3b8; }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .skills span {
+      background: #1e293b;
+      padding: 8px 12px;
+      margin: 5px;
+      display: inline-block;
+      border-radius: 5px;
+    }
+
+    .project {
+      background: #1e293b;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+    }
+
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Owais Qadir</h1>
+  <p>Data Analyst | Dashboard Specialist | Web Scraper</p>
+</header>
+
+<section>
+  <h2>About Me</h2>
+  <p>
+    I am a data analyst with experience in creating dashboards, extracting insights,
+    and building web scraping solutions. I help businesses make data-driven decisions.
+  </p>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="skills">
+    <span>Power BI</span>
+    <span>Tableau</span>
+    <span>Python</span>
+    <span>SQL</span>
+    <span>Web Scraping</span>
+    <span>Excel</span>
+    <span>SPSS</span>
+    <span>R</span>
+  </div>
+</section>
+
+<section>
+  <h2>Projects</h2>
+
+  <div class="project">
+    <h3>E-commerce Dashboard</h3>
+    <p>Interactive dashboard analyzing sales, customers, and revenue trends.</p>
+  </div>
+
+  <div class="project">
+    <h3>31,000 Listings Web Scraper</h3>
+    <p>Scraped and analyzed pressure washing business data for insights.</p>
+  </div>
+
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>Email: your@email.com</p>
+  <p>LinkedIn: your-link</p>
+</section>
+
+</body>
+</html>
