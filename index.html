@@ -14,14 +14,14 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(180deg, #020617, #0f172a);
-  color: #ffffff;
+  color: #fff;
 }
 
 /* NAV */
 nav {
   position: fixed;
   width: 100%;
-  background: rgba(2, 6, 23, 0.8);
+  background: rgba(2,6,23,0.7);
   backdrop-filter: blur(10px);
   padding: 15px;
   text-align: center;
@@ -29,18 +29,43 @@ nav {
 }
 
 nav a {
-  color: #94a3b8;
   margin: 0 15px;
   text-decoration: none;
+  color: #94a3b8;
 }
 
 nav a.active,
 nav a:hover {
   color: #38bdf8;
-  border-bottom: 2px solid #38bdf8;
 }
 
-/* SECTION */
+/* HERO */
+#home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.highlight {
+  color: #38bdf8;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #38bdf8;
+  color: black;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* SECTIONS */
 section {
   padding: 100px 20px;
   max-width: 1100px;
@@ -55,59 +80,65 @@ section.show {
   transform: translateY(0);
 }
 
-#home {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+h2 {
   text-align: center;
+  margin-bottom: 30px;
 }
 
-h1 { font-size: 3rem; }
-
-p { color: #94a3b8; }
-
 /* SKILLS */
-.skills-container {
+.skills {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
   gap: 20px;
 }
 
-.skill-box {
-  background: rgba(30, 41, 59, 0.6);
+.skill {
+  background: rgba(30,41,59,0.6);
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid rgba(56, 189, 248, 0.1);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.skill:hover {
+  border: 1px solid #38bdf8;
 }
 
 /* PROJECTS */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 20px;
 }
 
-.card {
-  background: rgba(30, 41, 59, 0.6);
-  padding: 15px;
+.project {
+  position: relative;
+  overflow: hidden;
   border-radius: 10px;
-  transition: 0.3s;
-  border: 1px solid rgba(56, 189, 248, 0.1);
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  border-color: #38bdf8;
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
-}
-
-.card img {
+.project img {
   width: 100%;
-  border-radius: 8px;
+  display: block;
+}
+
+.project:hover img {
+  transform: scale(1.1);
+}
+
+.project-info {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  width: 100%;
+  padding: 10px;
 }
 
 /* CONTACT */
+.contact {
+  text-align: center;
+}
+
 a { color: #38bdf8; }
 
 </style>
@@ -115,70 +146,65 @@ a { color: #38bdf8; }
 
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#home">Home</a>
-  <a href="#about">About</a>
   <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
 </nav>
 
-<!-- HOME -->
 <section id="home" class="show">
-  <h1>Owais Qadir</h1>
+  <h1>Hi, I'm <span class="highlight">Owais Qadir</span></h1>
   <p id="typing"></p>
   <p>Turning Raw Data into Clear Reports and Insights</p>
+  <a href="#projects" class="btn">View Projects</a>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    Results-driven Data Analyst proficient in data extraction, analysis, and visualization using Python, Excel, SQL, and Tableau.
-    Demonstrated ability to convert complex datasets into actionable insights that inform strategic decision making.
-    Strong collaboration and communication skills to work effectively with cross-functional teams.
-  </p>
-</section>
-
-<!-- SKILLS -->
 <section id="skills">
   <h2>Skills</h2>
-
-  <div class="skills-container">
-    <div class="skill-box">
-      <h3>Data Analysis</h3>
-      <p>Python, Pandas, NumPy, Excel</p>
-    </div>
-
-    <div class="skill-box">
-      <h3>Visualization</h3>
-      <p>Power BI, Tableau</p>
-    </div>
-
-    <div class="skill-box">
-      <h3>Database</h3>
-      <p>SQL, MySQL</p>
-    </div>
-
-    <div class="skill-box">
-      <h3>Web Scraping</h3>
-      <p>BeautifulSoup, Selenium</p>
-    </div>
+  <div class="skills">
+    <div class="skill">Python</div>
+    <div class="skill">SQL</div>
+    <div class="skill">Power BI</div>
+    <div class="skill">Tableau</div>
+    <div class="skill">Excel</div>
+    <div class="skill">Web Scraping</div>
   </div>
 </section>
 
-<!-- CONTACT -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+
+    <div class="project">
+      <img src="https://via.placeholder.com/400x250">
+      <div class="project-info">E-commerce Dashboard</div>
+    </div>
+
+    <div class="project">
+      <img src="https://via.placeholder.com/400x250">
+      <div class="project-info">Web Scraper</div>
+    </div>
+
+    <div class="project">
+      <img src="https://via.placeholder.com/400x250">
+      <div class="project-info">Real Estate Analysis</div>
+    </div>
+
+  </div>
+</section>
+
 <section id="contact">
   <h2>Contact</h2>
-  <p>Email: owaisqadir84@gmail.com</p>
-  <p><a href="https://www.linkedin.com/in/owais-qadir/" target="_blank">LinkedIn</a></p>
-  <p><a href="https://www.upwork.com/freelancers/owaisqadir" target="_blank">Upwork</a></p>
+  <div class="contact">
+    <p>Email: owaisqadir84@gmail.com</p>
+    <p><a href="https://www.linkedin.com/in/owais-qadir/">LinkedIn</a></p>
+    <p><a href="https://www.upwork.com/freelancers/owaisqadir">Upwork</a></p>
+  </div>
 </section>
 
 <script>
-
-/* TYPING */
-const text = ["Data Analyst", "Dashboard Specialist", "Web Scraper"];
+const text=["Data Analyst","Dashboard Expert","Web Scraper"];
 let i=0,j=0,current="",isDeleting=false;
 
 function type(){
@@ -191,43 +217,20 @@ function type(){
     isDeleting=!isDeleting;
     if(!isDeleting) i=(i+1)%text.length;
   }
-
   setTimeout(type,isDeleting?50:100);
 }
 type();
 
-/* SCROLL ANIMATION */
+/* scroll animation */
 const sections=document.querySelectorAll("section");
-
 window.addEventListener("scroll",()=>{
   sections.forEach(sec=>{
-    const top=window.scrollY;
     const offset=sec.offsetTop-200;
-    const height=sec.offsetHeight;
-
-    if(top>=offset && top<offset+height){
+    if(window.scrollY>=offset){
       sec.classList.add("show");
     }
   });
 });
-
-/* ACTIVE NAV */
-const navLinks=document.querySelectorAll("nav a");
-
-window.addEventListener("scroll",()=>{
-  let fromTop=window.scrollY;
-
-  navLinks.forEach(link=>{
-    let section=document.querySelector(link.getAttribute("href"));
-
-    if(section.offsetTop<=fromTop+100 && section.offsetTop+section.offsetHeight>fromTop+100){
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
-  });
-});
-
 </script>
 
 </body>
