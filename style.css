@@ -176,3 +176,7 @@ button:hover {
 html {
   scroll-behavior: smooth;
 }
+
+body {
+  background: red !important;
+}
