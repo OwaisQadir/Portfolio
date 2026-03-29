@@ -1,126 +1,101 @@
-/* RESET */
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: radial-gradient(circle at top, #0f172a, #020617);
-  color: #e2e8f0;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-/* NAV */
-nav {
-  position: fixed;
-  width: 100%;
-  background: rgba(2,6,23,0.6);
-  backdrop-filter: blur(10px);
-  padding: 15px;
-  text-align: center;
-  z-index: 1000;
-}
+<head>
+<meta charset="UTF-8">
+<title>Owais Qadir | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-nav a {
-  margin: 0 15px;
-  color: #94a3b8;
-  text-decoration: none;
-}
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 
-nav a:hover {
-  color: #38bdf8;
-}
+<!-- CACHE FIX -->
+<link rel="stylesheet" href="style.css?v=3">
 
-/* HERO */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-}
+</head>
 
-.gradient {
-  background: linear-gradient(90deg, #38bdf8, #6366f1);
-  -webkit-background-clip: text;
-  color: transparent;
-}
+<body>
 
-.typing {
-  color: #94a3b8;
-}
+<nav>
+  <a href="#home">Home</a>
+  <a href="#services">Services</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-.subtitle {
-  max-width: 600px;
-  text-align: center;
-}
+<!-- HERO -->
+<section id="home" class="hero">
+  <h1>Hi, I'm <span class="highlight">Owais Qadir</span></h1>
+  <p class="subtitle">Turning Raw Data into Clear Reports and Insights</p>
 
-/* BUTTONS */
-.buttons {
-  margin-top: 20px;
-  display: flex;
-  gap: 15px;
-}
+  <div class="buttons">
+    <a href="#projects" class="btn">View Projects</a>
+    <a href="#contact" class="btn outline">Hire Me</a>
+  </div>
+</section>
 
-.btn {
-  padding: 12px 20px;
-  border-radius: 10px;
-  text-decoration: none;
-}
+<!-- SERVICES -->
+<section id="services">
+  <h2>Services</h2>
 
-.btn.primary {
-  background: linear-gradient(135deg, #38bdf8, #6366f1);
-  color: white;
-}
+  <div class="grid">
+    <div class="card">Data Analysis</div>
+    <div class="card">Dashboards</div>
+    <div class="card">Web Scraping</div>
+    <div class="card">Reporting</div>
+  </div>
+</section>
 
-.btn.secondary {
-  border: 1px solid #38bdf8;
-  color: #38bdf8;
-}
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
 
-/* SECTIONS */
-section {
-  max-width: 900px;
-  margin: auto;
-  padding: 100px 20px;
-}
+  <div class="grid">
 
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 20px;
-}
+    <a href="project1.html" class="card">
+      <h3>31K+ Leads Scraper</h3>
+      <p>Lead generation dataset</p>
+    </a>
 
-/* CARD */
-.card {
-  background: rgba(30,41,59,0.4);
-  padding: 20px;
-  border-radius: 12px;
-  transition: 0.3s;
-}
+    <a href="project2.html" class="card">
+      <h3>Real Estate Analysis</h3>
+      <p>Investment insights</p>
+    </a>
 
-.card:hover {
-  transform: translateY(-5px);
-  border: 1px solid #38bdf8;
-}
+    <a href="project3.html" class="card">
+      <h3>E-Commerce Dashboard</h3>
+      <p>Business analytics</p>
+    </a>
 
-/* FORM */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+    <a href="project4.html" class="card">
+      <h3>Production Dashboard</h3>
+      <p>Manufacturing KPIs</p>
+    </a>
 
-input, textarea {
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  background: #1e293b;
-  color: white;
-}
+    <a href="project5.html" class="card">
+      <h3>Data Science Model</h3>
+      <p>Predictive analysis</p>
+    </a>
 
-button {
-  background: #38bdf8;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  cursor: pointer;
-}
+    <a href="project6.html" class="card">
+      <h3>Business Visualisation</h3>
+      <p>Executive insights</p>
+    </a>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+
+  <form action="https://formspree.io/f/your-form-id" method="POST">
+    <input type="text" placeholder="Name" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Message"></textarea>
+    <button>Send</button>
+  </form>
+</section>
+
+</body>
+</html>
