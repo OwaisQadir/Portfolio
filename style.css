@@ -38,6 +38,7 @@ section {
 .gallery {
   position: relative;
   max-width: 100%;
+  margin: 20px 0;
 }
 
 .gallery img {
@@ -50,8 +51,18 @@ section {
   display: block;
 }
 
-.buttons {
+.gallery .buttons {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 15px;
+  right: 15px;
+}
+
+.gallery button {
+  background: #0ea5e9;
+  border: none;
+  padding: 8px 12px;
+  margin: 2px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
