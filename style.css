@@ -1,6 +1,12 @@
 /* RESET */
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
   font-family: 'Inter', sans-serif;
   background: radial-gradient(circle at top, #0f172a, #020617);
   color: #e2e8f0;
@@ -11,7 +17,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(2, 6, 23, 0.7);
   backdrop-filter: blur(12px);
   padding: 16px;
   text-align: center;
@@ -31,35 +37,90 @@ nav a:hover {
   color: #38bdf8;
 }
 
-/* SECTION */
-section {
-  max-width: 900px;
-  margin: auto;
-  padding: 120px 20px 80px;
+/* HERO SECTION */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
   text-align: center;
+  padding: 0 20px;
 }
 
 /* HEADINGS */
 h1 {
-  font-size: 42px;
+  font-size: 48px;
   font-weight: 700;
-  background: linear-gradient(to right, #38bdf8, #6366f1);
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+/* GRADIENT NAME */
+.gradient {
+  background: linear-gradient(90deg, #38bdf8, #6366f1);
   -webkit-background-clip: text;
   color: transparent;
 }
 
-h2 {
-  font-size: 24px;
-  margin-top: 50px;
-  margin-bottom: 10px;
-  color: #e2e8f0;
+/* TEXT */
+.typing {
+  font-size: 18px;
+  color: #94a3b8;
 }
 
-p {
+.subtitle {
+  max-width: 600px;
   color: #94a3b8;
-  line-height: 1.7;
-  max-width: 700px;
+  line-height: 1.6;
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+/* PRIMARY BUTTON */
+.btn.primary {
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  color: white;
+}
+
+.btn.primary:hover {
+  transform: scale(1.05);
+}
+
+/* SECONDARY BUTTON */
+.btn.secondary {
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+}
+
+.btn.secondary:hover {
+  background: #38bdf8;
+  color: black;
+}
+
+/* SECTIONS */
+section {
+  max-width: 1000px;
   margin: auto;
+  padding: 100px 20px;
+  text-align: center;
 }
 
 /* GRID */
@@ -70,10 +131,10 @@ p {
   margin-top: 30px;
 }
 
-/* CARD (GLASS STYLE) */
+/* CARD (MODERN GLASS LOOK) */
 .card {
   background: rgba(30, 41, 59, 0.4);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
   padding: 20px;
   border-radius: 14px;
   border: 1px solid rgba(148,163,184,0.1);
@@ -81,64 +142,15 @@ p {
 }
 
 .card:hover {
-  transform: translateY(-6px) scale(1.02);
-  border: 1px solid rgba(56,189,248,0.5);
-  box-shadow: 0 0 25px rgba(56,189,248,0.15);
+  transform: translateY(-6px);
+  border: 1px solid #38bdf8;
+  box-shadow: 0 0 20px rgba(56,189,248,0.2);
 }
 
 /* PROJECT LINKS */
 a.card {
   text-decoration: none;
   color: inherit;
-  display: block;
-}
-
-/* GALLERY */
-.gallery-container {
-  max-width: 750px;
-  margin: 40px auto;
-}
-
-.gallery img {
-  width: 100%;
-  max-height: 420px;
-  object-fit: contain;
-  border-radius: 12px;
-  display: none;
-}
-
-.gallery img.active {
-  display: block;
-}
-
-/* SLIDER BUTTONS */
-.gallery .buttons {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-}
-
-.gallery button {
-  background: rgba(56,189,248,0.9);
-  border: none;
-  padding: 8px 14px;
-  margin: 3px;
-  border-radius: 8px;
-  cursor: pointer;
-  color: black;
-  font-weight: 600;
-}
-
-.gallery button:hover {
-  background: #0ea5e9;
-}
-
-/* LIST */
-ul {
-  text-align: left;
-  max-width: 600px;
-  margin: auto;
-  color: #94a3b8;
 }
 
 /* FORM */
@@ -147,7 +159,7 @@ form {
   flex-direction: column;
   gap: 15px;
   max-width: 500px;
-  margin: 30px auto;
+  margin: auto;
 }
 
 input, textarea {
@@ -172,76 +184,7 @@ button:hover {
   opacity: 0.9;
 }
 
-/* SCROLL */
+/* SMOOTH SCROLL */
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  background: red !important;
-}
-/* HERO SECTION */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  text-align: center;
-}
-
-/* GRADIENT NAME */
-.gradient {
-  background: linear-gradient(90deg, #38bdf8, #6366f1);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-/* TYPING TEXT */
-.typing {
-  font-size: 18px;
-  color: #94a3b8;
-}
-
-/* SUBTITLE */
-.subtitle {
-  max-width: 600px;
-  font-size: 16px;
-}
-
-/* BUTTONS */
-.buttons {
-  margin-top: 20px;
-  display: flex;
-  gap: 15px;
-}
-
-/* PRIMARY BUTTON */
-.btn {
-  padding: 12px 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.btn.primary {
-  background: linear-gradient(135deg, #38bdf8, #6366f1);
-  color: white;
-}
-
-.btn.primary:hover {
-  transform: scale(1.05);
-}
-
-/* SECONDARY BUTTON */
-.btn.secondary {
-  border: 1px solid #38bdf8;
-  color: #38bdf8;
-}
-
-.btn.secondary:hover {
-  background: #38bdf8;
-  color: black;
 }
