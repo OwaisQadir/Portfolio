@@ -180,3 +180,68 @@ html {
 body {
   background: red !important;
 }
+/* HERO SECTION */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+/* GRADIENT NAME */
+.gradient {
+  background: linear-gradient(90deg, #38bdf8, #6366f1);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* TYPING TEXT */
+.typing {
+  font-size: 18px;
+  color: #94a3b8;
+}
+
+/* SUBTITLE */
+.subtitle {
+  max-width: 600px;
+  font-size: 16px;
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+/* PRIMARY BUTTON */
+.btn {
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  color: white;
+}
+
+.btn.primary:hover {
+  transform: scale(1.05);
+}
+
+/* SECONDARY BUTTON */
+.btn.secondary {
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+}
+
+.btn.secondary:hover {
+  background: #38bdf8;
+  color: black;
+}
