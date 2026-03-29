@@ -15,3 +15,23 @@ function type(){
   setTimeout(type,isDeleting?50:100);
 }
 type();
+
+let index = 0;
+const images = document.querySelectorAll(".gallery img");
+
+function show(i){
+  images.forEach(img => img.classList.remove("active"));
+  images[i].classList.add("active");
+}
+
+function next(){
+  index = (index + 1) % images.length;
+  show(index);
+}
+
+function prev(){
+  index = (index - 1 + images.length) % images.length;
+  show(index);
+}
+
+show(index);
