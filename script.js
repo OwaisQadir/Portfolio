@@ -1,14 +1,14 @@
-console.log("JS LOADED");
+console.log("JS WORKING");
 
-// FUNCTION TO REVEAL SECTIONS
-function revealOnScroll() {
-  const reveals = document.querySelectorAll(".reveal");
+// SECTION REVEAL
+function reveal() {
+  const elements = document.querySelectorAll(".reveal");
 
-  reveals.forEach((el) => {
+  elements.forEach((el) => {
+    const top = el.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
-    const elementTop = el.getBoundingClientRect().top;
 
-    if (elementTop < windowHeight - 100) {
+    if (top < windowHeight - 100) {
       el.classList.add("active");
     }
   });
@@ -19,9 +19,9 @@ function animateCards() {
   const cards = document.querySelectorAll(".card");
 
   cards.forEach((card, index) => {
-    const rect = card.getBoundingClientRect().top;
+    const top = card.getBoundingClientRect().top;
 
-    if (rect < window.innerHeight - 50) {
+    if (top < window.innerHeight - 50) {
       setTimeout(() => {
         card.classList.add("show");
       }, index * 120);
@@ -29,14 +29,13 @@ function animateCards() {
   });
 }
 
-// RUN ON SCROLL
+// RUN EVENTS
 window.addEventListener("scroll", () => {
-  revealOnScroll();
+  reveal();
   animateCards();
 });
 
-// 🔥 RUN ON PAGE LOAD (THIS WAS MISSING)
 window.addEventListener("load", () => {
-  revealOnScroll();
+  reveal();
   animateCards();
 });
