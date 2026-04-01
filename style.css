@@ -1,29 +1,26 @@
-/* ================= RESET ================= */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ================= BODY ================= */
 body {
   font-family: 'Inter', sans-serif;
-  background: radial-gradient(circle at top, #0f172a, #020617);
+  background: #020617;
   color: #e2e8f0;
   line-height: 1.6;
-  padding-top: 70px;
 }
 
-/* ================= NAV ================= */
+/* NAV */
 nav {
   position: fixed;
-  top: 0;
   width: 100%;
-  background: rgba(2,6,23,0.9);
+  top: 0;
+  background: rgba(2,6,23,0.8);
   backdrop-filter: blur(10px);
   padding: 15px;
   text-align: center;
-  border-bottom: 1px solid rgba(148,163,184,0.1);
   z-index: 1000;
 }
 
@@ -31,121 +28,103 @@ nav a {
   margin: 0 15px;
   color: #94a3b8;
   text-decoration: none;
-  font-size: 14px;
-  transition: 0.3s;
 }
 
 nav a:hover {
   color: #38bdf8;
 }
 
-/* ================= HERO ================= */
-.hero {
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
+/* HERO */
+.hero, .case-hero {
+  padding-top: 120px;
   text-align: center;
+  margin-bottom: 60px;
+}
+
+.hero h1, .case-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
 .highlight {
-  background: linear-gradient(90deg, #38bdf8, #6366f1);
-  -webkit-background-clip: text;
-  color: transparent;
+  color: #38bdf8;
 }
 
 .subtitle {
   color: #94a3b8;
-  max-width: 600px;
 }
 
-/* ================= SECTION ================= */
+/* SECTIONS */
 section {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 80px auto;
   padding: 0 20px;
 }
 
 h2 {
-  font-size: 28px;
   margin-bottom: 15px;
+  color: #38bdf8;
 }
 
-/* ================= GRID ================= */
+p {
+  color: #cbd5f5;
+}
+
+/* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 25px;
   margin-top: 30px;
 }
 
-/* ================= CARD ================= */
+/* CARD */
 .card {
-  background: rgba(30,41,59,0.5);
-  padding: 20px;
+  background: rgba(30,41,59,0.4);
+  padding: 25px;
   border-radius: 14px;
-  border: 1px solid rgba(148,163,184,0.1);
-  transition: all 0.3s ease;
-  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-8px) scale(1.02);
-  border: 1px solid rgba(56,189,248,0.6);
-  box-shadow: 0 0 25px rgba(56,189,248,0.25);
+  transform: translateY(-5px);
+  border: 1px solid #38bdf8;
 }
 
-a.card {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* ================= LIST ================= */
+/* LIST */
 ul {
   margin-top: 15px;
+  padding-left: 20px;
 }
 
 li {
   margin-bottom: 10px;
-  color: #cbd5f5;
 }
 
-/* ================= SINGLE IMAGE ================= */
-.single-image {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-
+/* IMAGE */
 .single-image img {
   width: 100%;
-  max-width: 750px;
-  max-height: 450px;
+  max-width: 650px;
+  max-height: 350px;
   object-fit: contain;
+  display: block;
+  margin: auto;
   border-radius: 12px;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
-.single-image img:hover {
-  transform: scale(1.03);
-}
-
-/* ================= MULTI IMAGE ================= */
+/* MULTI IMAGE */
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
   gap: 15px;
-  margin-top: 30px;
 }
 
 .image-grid img {
   width: 100%;
-  max-height: 260px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -154,128 +133,29 @@ li {
   transform: scale(1.05);
 }
 
-/* ================= CASE STUDY ================= */
-.case-hero {
-  text-align: center;
-  padding: 120px 20px 60px;
-}
-
-.case-hero h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-
-.case-hero p {
-  color: #94a3b8;
-}
-
-/* METRICS */
-.metrics {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin: 40px 0;
-  text-align: center;
-}
-
-.metric h2 {
-  font-size: 34px;
-  color: #38bdf8;
-}
-
-.metric p {
-  color: #94a3b8;
-}
-
-/* GRID */
-.case-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 50px;
-}
-
-.case-left p {
-  margin-bottom: 25px;
-  color: #94a3b8;
-}
-
-.case-right {
-  background: rgba(30,41,59,0.5);
-  padding: 20px;
-  border-radius: 12px;
-}
-
-/* ================= FORM ================= */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-input, textarea {
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
-  background: rgba(30,41,59,0.6);
-  color: white;
-}
-
-button {
-  background: linear-gradient(135deg, #38bdf8, #6366f1);
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  color: white;
-}
-
-/* ================= ANIMATION ================= */
+/* REVEAL */
 .reveal {
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.card {
-  opacity: 0;
   transform: translateY(30px);
+  transition: 0.6s;
 }
 
-.card.show {
+.reveal.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ================= IMAGE MODAL ================= */
+/* MODAL */
 .modal {
+  display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0,0,0,0.9);
-  display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.3s;
-}
-
-.modal.active {
-  visibility: visible;
-  opacity: 1;
 }
 
 .modal img {
   max-width: 90%;
   max-height: 90%;
-  border-radius: 10px;
 }
