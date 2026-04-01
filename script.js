@@ -1,75 +1,25 @@
-/* ================= DEBUG ================= */
-console.log("JS LOADED");
+// SCROLL ANIMATION
+const elements = document.querySelectorAll(".reveal");
 
-/* ================= SCROLL REVEAL ================= */
-function revealSections() {
-  const sections = document.querySelectorAll(".reveal");
-
-  sections.forEach((section) => {
-    const top = section.getBoundingClientRect().top;
-    const trigger = window.innerHeight - 100;
-
-    if (top < trigger) {
-      section.classList.add("active");
+window.addEventListener("scroll", () => {
+  elements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add("show");
     }
   });
-}
+});
 
-/* ================= CARD ANIMATION ================= */
-function animateCards() {
-  const cards = document.querySelectorAll(".card");
-
-  cards.forEach((card, index) => {
-    const top = card.getBoundingClientRect().top;
-    const trigger = window.innerHeight - 50;
-
-    if (top < trigger) {
-      setTimeout(() => {
-        card.classList.add("show");
-      }, index * 100); // stagger effect
-    }
-  });
-}
-
-/* ================= IMAGE MODAL ================= */
-
-// Create modal dynamically
+// IMAGE MODAL
 const modal = document.createElement("div");
 modal.classList.add("modal");
-
-const modalImg = document.createElement("img");
-
-modal.appendChild(modalImg);
 document.body.appendChild(modal);
 
-// Add click to all images
-function enableImageZoom() {
-  const images = document.querySelectorAll("img");
+modal.addEventListener("click", () => modal.style.display = "none");
 
-  images.forEach((img) => {
-    img.addEventListener("click", () => {
-      modal.classList.add("active");
-      modalImg.src = img.src;
-    });
+document.querySelectorAll("img").forEach(img => {
+  img.addEventListener("click", () => {
+    modal.innerHTML = `<img src="${img.src}">`;
+    modal.style.display = "flex";
   });
-}
-
-// Close modal
-modal.addEventListener("click", () => {
-  modal.classList.remove("active");
-});
-
-/* ================= EVENTS ================= */
-
-// Run on scroll
-window.addEventListener("scroll", () => {
-  revealSections();
-  animateCards();
-});
-
-// Run on page load
-window.addEventListener("load", () => {
-  revealSections();
-  animateCards();
-  enableImageZoom();
 });
