@@ -1,11 +1,11 @@
-/* ================= RESET ================= */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ================= BODY ================= */
+/* BODY */
 body {
   font-family: 'Inter', sans-serif;
   background: #020617;
@@ -14,128 +14,87 @@ body {
   padding-top: 70px;
 }
 
-/* ================= NAV ================= */
+/* NAV */
 nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(2,6,23,0.85);
-  backdrop-filter: blur(10px);
+  background: rgba(2,6,23,0.9);
   padding: 15px;
   text-align: center;
   z-index: 1000;
 }
 
 nav a {
-  margin: 0 18px;
+  margin: 0 15px;
   color: #94a3b8;
   text-decoration: none;
-  font-weight: 500;
 }
 
 nav a:hover {
   color: #38bdf8;
 }
 
-/* ================= HERO ================= */
+/* HERO */
 .hero, .case-hero {
   text-align: center;
   margin-bottom: 80px;
 }
 
 .hero h1, .case-hero h1 {
-  font-size: 2.6rem;
-  margin-bottom: 10px;
+  font-size: 2.5rem;
 }
 
-.highlight {
-  color: #38bdf8;
-}
-
-.subtitle {
-  color: #94a3b8;
-  font-size: 1rem;
-}
-
-/* ================= SECTIONS ================= */
+/* SECTIONS */
 section {
   max-width: 1000px;
-  margin: 120px auto;
+  margin: 100px auto;
   padding: 0 20px;
 }
 
 h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
   color: #38bdf8;
+  margin-bottom: 15px;
 }
 
-p {
-  color: #cbd5f5;
-}
-
-/* ================= GRID ================= */
+/* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 25px;
+  margin-top: 30px;
 }
 
-/* ================= CARD ================= */
+/* CARD */
 .card {
-  background: rgba(30,41,59,0.5);
-  padding: 30px 20px;
-  border-radius: 16px;
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 12px;
   text-align: center;
-  transition: all 0.3s ease;
-}
-
-/* FIX LINK STYLE */
-.card a {
   text-decoration: none;
-  color: #e2e8f0;
-  font-weight: 600;
-  font-size: 1.1rem;
-}
-
-.card a:visited {
-  color: #e2e8f0;
+  color: white;
+  transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-5px);
   border: 1px solid #38bdf8;
-  box-shadow: 0 0 20px rgba(56,189,248,0.2);
 }
 
-/* ================= LIST ================= */
-ul {
-  margin-top: 15px;
-  padding-left: 20px;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-/* ================= SINGLE IMAGE ================= */
+/* IMAGE */
 .single-image img {
   width: 100%;
   max-width: 650px;
   max-height: 350px;
-  object-fit: contain;
   display: block;
-  margin: 40px auto;
-  border-radius: 12px;
+  margin: 30px auto;
+  border-radius: 10px;
 }
 
-/* ================= MULTI IMAGE GRID ================= */
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
   gap: 15px;
-  margin-top: 20px;
 }
 
 .image-grid img {
@@ -144,54 +103,33 @@ li {
   object-fit: cover;
   border-radius: 10px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-.image-grid img:hover {
-  transform: scale(1.05);
-}
-
-/* ================= CONTACT FORM ================= */
+/* FORM */
 form {
-  margin-top: 30px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  max-width: 500px;
+  gap: 10px;
+  max-width: 400px;
 }
 
 input, textarea {
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #1e293b;
-  background: #020617;
-  color: #e2e8f0;
-  font-size: 14px;
-}
-
-textarea {
-  min-height: 120px;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
 }
 
 button {
-  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  padding: 10px;
+  background: #38bdf8;
   border: none;
-  padding: 12px;
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
-button:hover {
-  opacity: 0.85;
-}
-
-/* ================= ANIMATIONS ================= */
+/* ANIMATION */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: 0.6s ease;
+  transition: 0.6s;
 }
 
 .reveal.show {
@@ -199,7 +137,7 @@ button:hover {
   transform: translateY(0);
 }
 
-/* ================= IMAGE MODAL ================= */
+/* MODAL */
 .modal {
   display: none;
   position: fixed;
@@ -207,22 +145,8 @@ button:hover {
   background: rgba(0,0,0,0.9);
   justify-content: center;
   align-items: center;
-  z-index: 2000;
 }
 
 .modal img {
   max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-}
-
-/* ================= SMALL SCREENS ================= */
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  section {
-    margin: 80px auto;
-  }
 }
