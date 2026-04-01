@@ -1,23 +1,25 @@
-/* RESET */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ================= BODY ================= */
 body {
   font-family: 'Inter', sans-serif;
   background: #020617;
   color: #e2e8f0;
   line-height: 1.6;
+  padding-top: 70px;
 }
 
-/* NAV */
+/* ================= NAV ================= */
 nav {
   position: fixed;
-  width: 100%;
   top: 0;
-  background: rgba(2,6,23,0.8);
+  width: 100%;
+  background: rgba(2,6,23,0.85);
   backdrop-filter: blur(10px);
   padding: 15px;
   text-align: center;
@@ -25,24 +27,24 @@ nav {
 }
 
 nav a {
-  margin: 0 15px;
+  margin: 0 18px;
   color: #94a3b8;
   text-decoration: none;
+  font-weight: 500;
 }
 
 nav a:hover {
   color: #38bdf8;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero, .case-hero {
-  padding-top: 120px;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
 .hero h1, .case-hero h1 {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   margin-bottom: 10px;
 }
 
@@ -52,17 +54,19 @@ nav a:hover {
 
 .subtitle {
   color: #94a3b8;
+  font-size: 1rem;
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
 section {
-  max-width: 900px;
-  margin: 80px auto;
+  max-width: 1000px;
+  margin: 120px auto;
   padding: 0 20px;
 }
 
 h2 {
-  margin-bottom: 15px;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
   color: #38bdf8;
 }
 
@@ -70,29 +74,42 @@ p {
   color: #cbd5f5;
 }
 
-/* GRID */
+/* ================= GRID ================= */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 25px;
-  margin-top: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
 }
 
-/* CARD */
+/* ================= CARD ================= */
 .card {
-  background: rgba(30,41,59,0.4);
-  padding: 25px;
-  border-radius: 14px;
+  background: rgba(30,41,59,0.5);
+  padding: 30px 20px;
+  border-radius: 16px;
   text-align: center;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+}
+
+/* FIX LINK STYLE */
+.card a {
+  text-decoration: none;
+  color: #e2e8f0;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.card a:visited {
+  color: #e2e8f0;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   border: 1px solid #38bdf8;
+  box-shadow: 0 0 20px rgba(56,189,248,0.2);
 }
 
-/* LIST */
+/* ================= LIST ================= */
 ul {
   margin-top: 15px;
   padding-left: 20px;
@@ -102,22 +119,23 @@ li {
   margin-bottom: 10px;
 }
 
-/* IMAGE */
+/* ================= SINGLE IMAGE ================= */
 .single-image img {
   width: 100%;
   max-width: 650px;
   max-height: 350px;
   object-fit: contain;
   display: block;
-  margin: auto;
+  margin: 40px auto;
   border-radius: 12px;
 }
 
-/* MULTI IMAGE */
+/* ================= MULTI IMAGE GRID ================= */
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 15px;
+  margin-top: 20px;
 }
 
 .image-grid img {
@@ -133,11 +151,47 @@ li {
   transform: scale(1.05);
 }
 
-/* REVEAL */
+/* ================= CONTACT FORM ================= */
+form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+}
+
+input, textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+  background: #020617;
+  color: #e2e8f0;
+  font-size: 14px;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+button {
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* ================= ANIMATIONS ================= */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: 0.6s;
+  transition: 0.6s ease;
 }
 
 .reveal.show {
@@ -145,7 +199,7 @@ li {
   transform: translateY(0);
 }
 
-/* MODAL */
+/* ================= IMAGE MODAL ================= */
 .modal {
   display: none;
   position: fixed;
@@ -153,9 +207,22 @@ li {
   background: rgba(0,0,0,0.9);
   justify-content: center;
   align-items: center;
+  z-index: 2000;
 }
 
 .modal img {
   max-width: 90%;
   max-height: 90%;
+  border-radius: 10px;
+}
+
+/* ================= SMALL SCREENS ================= */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  section {
+    margin: 80px auto;
+  }
 }
