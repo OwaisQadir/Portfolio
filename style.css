@@ -362,3 +362,40 @@ font-size:2rem;
 }
 
 }
+
+.form-success{
+display:none;
+color:#22c55e;
+margin-top:10px;
+}
+
+.form-success.show{
+display:block;
+}
+
+.send-btn.loading{
+opacity:.7;
+pointer-events:none;
+}
+
+.btn-loader{
+display:none;
+}
+
+.send-btn.loading .btn-text{
+display:none;
+}
+
+.send-btn.loading .btn-loader{
+display:inline-block;
+width:18px;
+height:18px;
+border:2px solid white;
+border-top:2px solid transparent;
+border-radius:50%;
+animation:spin .6s linear infinite;
+}
+
+@keyframes spin{
+to{transform:rotate(360deg);}
+}
