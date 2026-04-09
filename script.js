@@ -1,11 +1,51 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+/* CONTACT FORM */
+
+const form = document.querySelector(".contact-form");
+
+if(form){
+
+const button = form.querySelector(".send-btn");
+const success = form.querySelector(".form-success");
+
+form.addEventListener("submit", async function(e){
+
+e.preventDefault();
+
+button.classList.add("loading");
+
+const data = new FormData(form);
+
+await fetch(form.action,{
+method:"POST",
+body:data,
+headers:{ 'Accept':'application/json' }
+});
+
+button.classList.remove("loading");
+
+success.classList.add("show");
+
+form.reset();
+
+setTimeout(()=>{
+success.classList.remove("show");
+},4000);
+
+});
+
+}
+
+/* IMAGE MODAL */
+
 const images = document.querySelectorAll(".image-grid img, .case-image img");
+
+if(images.length){
 
 let currentIndex = 0;
 let imageArray = [];
 
-/* CREATE MODAL */
 const modal = document.createElement("div");
 modal.className = "image-modal";
 
@@ -21,58 +61,42 @@ const modalImg = modal.querySelector(".modal-img");
 const nextBtn = modal.querySelector(".modal-next");
 const prevBtn = modal.querySelector(".modal-prev");
 
-/* COLLECT IMAGES */
-images.forEach((img, index) => {
+images.forEach((img,index)=>{
 imageArray.push(img.src);
 
-img.addEventListener("click", () => {
-currentIndex = index;
-openModal();
-});
-});
-
-/* OPEN */
-function openModal(){
+img.addEventListener("click",()=>{
+currentIndex=index;
 modal.classList.add("active");
-modalImg.src = imageArray[currentIndex];
-}
+modalImg.src=imageArray[currentIndex];
+});
+});
 
-/* CLOSE */
-modal.addEventListener("click", e => {
-if(e.target === modal){
+modal.addEventListener("click",e=>{
+if(e.target===modal){
 modal.classList.remove("active");
 }
 });
 
-/* NEXT */
-function nextImage(){
-currentIndex = (currentIndex + 1) % imageArray.length;
-modalImg.src = imageArray[currentIndex];
+function next(){
+currentIndex=(currentIndex+1)%imageArray.length;
+modalImg.src=imageArray[currentIndex];
 }
 
-/* PREV */
-function prevImage(){
-currentIndex = (currentIndex - 1 + imageArray.length) % imageArray.length;
-modalImg.src = imageArray[currentIndex];
+function prev(){
+currentIndex=(currentIndex-1+imageArray.length)%imageArray.length;
+modalImg.src=imageArray[currentIndex];
 }
 
-nextBtn.addEventListener("click", e=>{
+nextBtn.addEventListener("click",e=>{
 e.stopPropagation();
-nextImage();
+next();
 });
 
-prevBtn.addEventListener("click", e=>{
+prevBtn.addEventListener("click",e=>{
 e.stopPropagation();
-prevImage();
+prev();
 });
 
-/* KEYBOARD */
-document.addEventListener("keydown", e=>{
-if(!modal.classList.contains("active")) return;
-
-if(e.key === "ArrowRight") nextImage();
-if(e.key === "ArrowLeft") prevImage();
-if(e.key === "Escape") modal.classList.remove("active");
-});
+}
 
 });
